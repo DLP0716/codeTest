@@ -12,6 +12,7 @@ const fileData = fs.readFile(fileName, 'utf8', (err, data) => {
 });
 
 let keywords = ["dog", "cat", "fish", "mouse", "here", "there", "and"];
+let keyAndFile;
 
 removeKeywords(keywords, fileData) {
 	let matched = [];
@@ -25,7 +26,7 @@ removeKeywords(keywords, fileData) {
 		}
 	}
 	
-	const keyAndFile = {processedFileName: matched.join()};
+	keyAndFile = {processedFileName: matched.join()};
 	
 	return processedData;
 }
