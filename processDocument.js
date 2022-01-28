@@ -19,7 +19,7 @@ removeKeywords(keywords, fileData) {
 	let redact;
 	for (word in keywords) {
 		redact = "x".repeat(word.length);
-		processedData = processedData.replace(/[^"']+(?=(", ")(', ')|"'$)/g, redact);
+		processedData = processedData.replaceAll(word, redact);
 		if ( fileData.includes(word) && !processedData.includes(word) ) {
 			matched.push(word);
 		}
